@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thesis Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+</head>
+
+<body>
+        <form>
+            <input type="text" name  = "num1" placeholder = "number1">
+            <input type="text" name  = "num2" placeholder = "number2">
+            <select name = "operator">
+                <option>none</option>
+                <option>add</option>
+                <option>substract</option>
+            </select>
+            <br>
+            <button type="submit" name="submit" value ="submit">calculate</button>
+        </form>
+        <p>the aswer is: </p>
+        <?php
+            if(isset($_GET['submit'])){
+                $result1 = $_GET['num1'];
+                $result2 = $_GET['num2'];
+                $operator = $_GET['operator'];
+    
+                switch($operator) {
+                    case "none":
+                        echo "please select method";
+                    break;
+                    case "add":
+                        echo  $result1 + $result2;
+                    break;
+                    case "substract":
+                        echo $result1 - $result2;
+                    break;
+                }
+            }
+        ?>
+    
+    
+    
+    </body>
+</html>
