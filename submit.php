@@ -31,15 +31,15 @@
         <form action="includes/uploadArchitect.php" method="POST" enctype="multipart/form-data">
             <p>Architect name: </p>
             
-            <input type="text" name="naam"  >
+            <input type="text" name="architectname"  >
             <br>
             <p>Nationaliteit </p>
             
-            <input type="text" name="nationaliteit" >
+            <input type="text" name="nationality" >
             <br>
 
             <p>Birthdate: </p>
-            <input type="date" name="geboortedatum" >
+            <input type="date" name="birthdate" >
             <br>
 
             <p>Short description: </p>
