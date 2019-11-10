@@ -1,21 +1,28 @@
+<?php
+    include 'header.php';
+?>
 
-
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <title></title>
-    </head>
-
-    <body>
         <form action="includes/uploadBuilding.php" method="POST" enctype="multipart/form-data">
             <p>Building name: </p>
             
             <input type="text" name="buildingname"  >
             <br>
-            <p>Architect: </p>
-            
-            <input type="text" name="architect" >
+            <p>Architect: (If not in the list, please make a new one)</p>
+
+            <select name= "architect">
+            <?php
+            $sql = "SELECT * FROM architects;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+
+            if($resultCheck > 0) {
+                while ($row = mysqli_fetch_assoc($result)){
+                    echo "<option value=".$row['architectname']."> ".$row['architectname']." </option>"
+                    ;
+                }
+            }
+            ?>
+            </select>
             <br>
             <p>Short description: </p>
             
