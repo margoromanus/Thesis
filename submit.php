@@ -8,10 +8,10 @@
     </head>
 
     <body>
-        <form action="includes/uploadGebouw.php" method="POST" enctype="multipart/form-data">
+        <form action="includes/uploadBuilding.php" method="POST" enctype="multipart/form-data">
             <p>Building name: </p>
             
-            <input type="text" name="buildingName"  >
+            <input type="text" name="buildingname"  >
             <br>
             <p>Architect: </p>
             
