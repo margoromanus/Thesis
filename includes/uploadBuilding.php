@@ -4,7 +4,7 @@ include_once 'dbh.inc.php';
 
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
-    $buildingName = $_POST['buildingname'];
+    $buildingname = $_POST['buildingname'];
     $architect = $_POST['architect'];
     $description = $_POST['description'];
 
