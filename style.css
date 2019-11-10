@@ -3,14 +3,25 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.gebouw-container {
+.building-container {
+    width: 900px;
+    background-color: #ffffff;
+    padding: 30px;
+
+}
+.architect-container {
     width: 900px;
     background-color: #ffffff;
     padding: 30px;
 
 }
 
-.gebouw-box {
+.building-box {
+    padding-bottom: 30px;
+    width: 100%;
+
+}
+.architect-box {
     padding-bottom: 30px;
     width: 100%;
 

@@ -4,11 +4,11 @@ include_once 'dbh.inc.php';
 
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
-    $buildingName = $_POST['buildingName'];
+    $buildingName = $_POST['buildingname'];
     $architect = $_POST['architect'];
     $description = $_POST['description'];
 
-    $fileName = $_FILES['file']['name'];
+    $fileName = $_FILES['file']['buildingname'];
     $fileTmpName = $_FILES['file']['tmp_name'];
     $fileSize = $_FILES['file']['size'];
     $fileError = $_FILES['file']['error'];
@@ -22,12 +22,12 @@ if (isset($_POST['submit'])) {
     if (in_array($fileActualExt, $allowed)){
         if($fileError === 0){
             if($fileSize < 50000000){
-                $fileNameNew = $buildingName.".".$fileActualExt;
+                $fileNameNew = $buildingname.".".$fileActualExt;
 
                 $fileDestination = '../gltf/'.$fileNameNew;
                 move_uploaded_file($fileTmpName, $fileDestination);
                 echo "succes";
-                $sql = "INSERT INTO gebouwen (gebouwnaam, architect, modelnaam, beschrijving) VALUES ('$buildingName', '$architect', '$fileNameNew', '$description');";
+                $sql = "INSERT INTO buildings (buildingname, architect, modelname, description) VALUES ('$buildingname', '$architect', '$fileNameNew', '$description');";
                 mysqli_query($conn, $sql);
                 header("Location: ../index.php?uploadsuccess");
             }
