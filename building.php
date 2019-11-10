@@ -18,7 +18,8 @@
                 echo "<div class = 'building-box'>
                     <h3>".$row['buildingname']."</h3>
                     <p>".$row['description']."</p>
-                    <p>".$row['architect']."</p>
+                    <a href='architect.php?title=".$row['architect']."'>
+                    <p>".$row['architect']."</p></a>
                             
                 </div>
 

@@ -23,7 +23,7 @@
                     <h3>".$row['buildingname']."</h3>
                     <p>".$row['description']."</p>
                     <p>".$row['architect']."</p>
-                </div>";
+                </div> </a>";
             }
         }
     ?>
@@ -43,7 +43,7 @@
                     <h3>".$row['architectname']."</h3>
                     <p>".$row['nationality']."</p>
                     <p>".$row['description']."</p>
-                </div>";
+                </div> </a>";
             }
         }
     ?>
