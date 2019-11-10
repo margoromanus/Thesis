@@ -24,12 +24,23 @@
 
                 <a-scene class = 'viewer' embedded>
                     <a-assets>
-                        <a-asset-item id='scene' src='gltf/".$row['modelnaam']."'>
+                        <a-asset-item id='model' src='gltf/".$row['modelnaam']."'>
                     </a-assets>
-                    <a-light type='ambient' color='#555'></a-light>
-                    <a-light type='point' color='white'  intensity='1.5' position='1 1 -1'></a-light>
-                    <a-gltf-model position='0 0 -4' scale='0.0006 0.0006 0.0006 'src='#scene'></a-gltf-model>
-                    <a-plane position='0 0 -4' rotation='-90 0 0' width='4' height='4' color='#7BC8A4' shadow></a-plane>
+                    <a-entity camera look-controls orbit-controls='target: 0 0 0; minDistance: 0.5; maxDistance: 2; initialPosition: 0 1 1'>
+                        <a-entity light='type: directional; castShadow: true; 
+                        shadowCameraBottom: -0.5;
+                        shadowCameraFar: 4;
+                        shadowCameraLeft: -0.5;
+                        shadowCameraNear: 1;
+                        shadowCameraRight: 0.5;
+                        shadowCameraTop: 0.5;
+                        shadowCameraVisible: false; 
+                        color: #fff; intensity: 2' position='1 1 1'></a-entity>
+                    </a-entity>
+
+                    <a-light type='ambient' color='#666'></a-light>
+                    
+                    <a-gltf-model id='target' resize='axis:x; value:1' position='0 0 0' shadow='cast: true' src='#model'></a-gltf-model>
                 </a-scene>";
             }
         }

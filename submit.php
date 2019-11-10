@@ -9,12 +9,20 @@
 
     <body>
         <form action="includes/upload.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="buildingName" >
+            <p>Building name: </p>
+            
+            <input type="text" name="buildingName"  >
             <br>
+            <p>Architect: </p>
+            
             <input type="text" name="architect" >
             <br>
-            <textarea name="description">enter short discription</textarea>
+            <p>Short description: </p>
+            
+            <textarea name="description">enter short description</textarea>
             <br>
+            <p>3d model file: </p>
+            
             <input type="file" name="file">
             <br>
             <button type="submit" name="submit">UPLOAD</button>
