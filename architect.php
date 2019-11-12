@@ -1,8 +1,6 @@
 <?php
     include 'header.php';
 ?>
-
-<h1> architect page</h1>
         
 <div class= "architect-container">
     <?php
@@ -15,18 +13,29 @@
             
         if($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)){
-                echo "<div class = 'architect-box'>
-                    <h3>".$row['architectname']."</h3>
-                    <p>".$row['nationality']."</p>
-                    <p>".$row['description']."</p>
-                            
-                </div>";
+                echo " 
+                
+                <div class = ' row architect-box border rounded'>
+                    <div class='col-md-3'>
+                        <img class='img-fluid rounded-circle' src='images/architects/".$row['imagename']."' alt='A photo of ".$row['architectname']."' title='".$row['architectname']."'/>
+                    </div>
+
+                    <div class='col-md-9'>
+                        <h3>".$row['architectname']."</h3>
+                        <p>".$row['nationality']."</p>
+                        <p>".$row['description']."</p>
+                    </div>
+                    
+                </div> 
+            
+            <br>";
             }
         }
     ?>
 </div>
 
 <div class= "building-container">
+    <h2>Works:</h2>
     <?php
         $sql = "SELECT * FROM buildings WHERE architect ='$title'";
         $result = mysqli_query($conn, $sql);
@@ -34,11 +43,20 @@
             
         if($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)){
-                echo "<a href='building.php?title=".$row['buildingname']."'> <div class = 'building-box'>
-                    <h3>".$row['buildingname']."</h3>
-                    <p>".$row['description']."</p>
-                    <p>".$row['architect']."</p>
-                </div>";
+                echo "  <a href='building.php?title=".$row['buildingname']."'> 
+                <div class = ' row rounded border building-box'>
+
+                    <div class='col-sm-5'>
+                        <img class='img-fluid rounded' src='images/buildings/".$row['imagename']."' alt='A photo of ".$row['buildingname']."' title='".$row['buildingname']."'/>
+                    </div>
+
+                    <div class='col-sm-7'>
+                        <h3>".$row['buildingname']."</h3>
+                        <p>".$row['architect']."</p>
+                    </div>
+                </div> 
+            </a> 
+            <br>";
             }
         }
     ?>
