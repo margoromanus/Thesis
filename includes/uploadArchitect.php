@@ -3,32 +3,33 @@
 include_once 'dbh.inc.php';
 
 if (isset($_POST['submit'])) {
-    $file = $_FILES['file'];
+    $imagefile = $_FILES['image'];
     $architectname = $_POST['architectname'];
     $nationality = $_POST['nationality'];
     $birthdate = $_POST['birthdate'];
+    $deathdate = $_POST['deathdate'];
     $description = $_POST['description'];
 
-    $fileName = $file['name'];
-    $fileTmpName = $file['tmp_name'];
-    $fileSize = $file['size'];
-    $fileError = $file['error'];
-    $fileType = $file['type'];
+    $imageName = $imagefile['name'];
+    $imageTmpName = $imagefile['tmp_name'];
+    $imageSize = $imagefile['size'];
+    $imageError = $imagefile['error'];
+    $imageType = $imagefile['type'];
 
-    $fileExt = explode('.', $fileName);
-    $fileActualExt = strtolower(end($fileExt));
+    $imageExt = explode('.', $imageName);
+    $imageActualExt = strtolower(end($imageExt));
 
     $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'PNG', 'JPEG', 'JPG');
 
-    if (in_array($fileActualExt, $allowed)){
-        if($fileError === 0){
-            if($fileSize < 50000000){
-                $fileNameNew = $architectname.".".$fileActualExt;
+    if (in_array($imageActualExt, $allowed)){
+        if($imageError === 0){
+            if($imageSize < 50000000){
+                $imageNameNew = "arch ".$architectname.".".$imageActualExt;
 
-                $fileDestination = '../images/'.$fileNameNew;
-                move_uploaded_file($fileTmpName, $fileDestination);
+                $imageDestination = '../archimages/'.$imageNameNew;
+                move_uploaded_file($imageTmpName, $imageDestination);
                 echo "succes";
-                $sql = "INSERT INTO architects (architectname, nationality, birthdate, description) VALUES ('$architectname', '$nationality', '$birthdate', '$description');";
+                $sql = "INSERT INTO architects (architectname, nationality, birthdate, deathdate, description, imagename) VALUES ('$architectname', '$nationality', '$birthdate', '$description', '$imageNameNew');";
                 mysqli_query($conn, $sql);
                 header("Location: ../index.php?uploadsuccess");
             }

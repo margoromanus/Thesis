@@ -23,6 +23,11 @@
             }
             ?>
             </select>
+            
+            <br>
+            <p>Adress: </p>
+            
+            <textarea name="buildinglocation">adress</textarea>
             <br>
             <p>Short description: </p>
             
@@ -32,6 +37,10 @@
             
             <input type="file" name="file">
             <br>
+            <p>Image file: </p>
+            
+            <input type="file" name="image">
+            <br>
             <button type="submit" name="submit">UPLOAD</button>
         </form>
 
@@ -40,13 +49,16 @@
             
             <input type="text" name="architectname"  >
             <br>
-            <p>Nationaliteit </p>
+            <p>Nationality </p>
             
             <input type="text" name="nationality" >
             <br>
 
             <p>Birthdate: </p>
             <input type="date" name="birthdate" >
+            <br>
+            <p>Deathdate: </p>
+            <input type="date" name="deathdate" >
             <br>
 
             <p>Short description: </p>
@@ -55,7 +67,7 @@
             <br>
             <p>profile image: </p>
             
-            <input type="file" name="file">
+            <input type="file" name="image">
             <br>
             <button type="submit" name="submit">UPLOAD</button>
         </form>

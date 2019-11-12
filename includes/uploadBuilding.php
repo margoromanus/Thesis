@@ -4,9 +4,12 @@ include_once 'dbh.inc.php';
 
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
+    $imagefile = $_FILES['image'];
+
     $buildingname = $_POST['buildingname'];
     $architect = $_POST['architect'];
     $description = $_POST['description'];
+    $buildinglocation = $_POST['buildinglocation'];
 
     $fileName = $file['name'];
     $fileTmpName = $file['tmp_name'];
@@ -14,33 +17,67 @@ if (isset($_POST['submit'])) {
     $fileError = $file['error'];
     $fileType = $file['type'];
 
+    $imageName = $imagefile['name'];
+    $imageTmpName = $imagefile['tmp_name'];
+    $imageSize = $imagefile['size'];
+    $imageError = $imagefile['error'];
+    $imageType = $imagefile['type'];
+
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
-    $allowed = array('gltf');
+    $imageExt = explode('.', $imageName);
+    $imageActualExt = strtolower(end($imageExt));
 
-    if (in_array($fileActualExt, $allowed)){
+    $fileAllowed = array('gltf', 'glb');
+    $imageAllowed = array('png', 'jpg', 'jpeg', 'pdf');
+
+    if (in_array($fileActualExt, $fileAllowed)){
         if($fileError === 0){
             if($fileSize < 50000000){
-                $fileNameNew = $buildingname.".".$fileActualExt;
 
-                $fileDestination = '../gltf/'.$fileNameNew;
-                move_uploaded_file($fileTmpName, $fileDestination);
-                echo "succes";
-                $sql = "INSERT INTO buildings (buildingname, architect, modelname, description) VALUES ('$buildingname', '$architect', '$fileNameNew', '$description');";
-                mysqli_query($conn, $sql);
-                header("Location: ../index.php?uploadsuccess");
+                if (in_array($imageActualExt, $imageAllowed)){
+                    if($imageError === 0){
+                        if($imageSize < 50000000){
+            
+                            
+                            $fileNameNew = $buildingname.".".$fileActualExt;
+                            $imageNameNew = $buildingname.".".$imageActualExt;
+            
+                            $fileDestination = '../gltf/'.$fileNameNew;
+                            move_uploaded_file($fileTmpName, $fileDestination);
+                            echo " file succes";
+
+                            $imageDestination = '../images/'.$imageNameNew;
+                            move_uploaded_file($imageTmpName, $imageDestination);
+                            echo " image succes";
+
+                            $sql = "INSERT INTO buildings (buildingname, architect, modelname, imagename, description, buildinglocation) VALUES ('$buildingname', '$architect', '$fileNameNew', '$imageNameNew', '$description', $buildinglocation);";
+                            mysqli_query($conn, $sql);
+                            header("Location: ../index.php?uploadsuccess");
+                        }
+                        else{
+                            echo "image must be below 50 Mb";
+                        }
+                    }
+                    else{
+                        echo "unknown error with image";
+                    }
+                }
+                else{
+                    echo "error, only .png, .jpg, .jpeg & .pdf files allowed";
+                }
             }
             else{
                 echo "file must be below 50 Mb";
             }
         }
         else{
-            echo "error";
+            echo "unknown error with model";
         }
     }
     else{
-        echo "error, only gltf files allowed";
+        echo "error, only .gltf & .glb files allowed";
     }
 
     
