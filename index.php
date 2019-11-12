@@ -2,7 +2,7 @@
     include 'header.php';
 ?>
 
-<div class="row">
+<div class="row main-row">
 
 <div class= " col-md-7 building-container">
 <h2> All Buildings </h2>
@@ -50,19 +50,19 @@
                 echo "
                 
                 <a href='architect.php?title=".$row['architectname']."'> 
-                    <div class = ' row architect-box'>
-                        <div class='col-sm-5'>
+                    <div class = ' row architect-box border rounded'>
+                        <div class='col-lg-5'>
                             <img class='img-fluid rounded-circle' src='images/architects/".$row['imagename']."' alt='A photo of ".$row['architectname']."' title='".$row['architectname']."'/>
                         </div>
 
-                        <div class='col-sm-5'>
+                        <div class='col-lg-7'>
                             <h3>".$row['architectname']."</h3>
                             <p>".$row['nationality']."</p>
                         </div>
                         
                     </div> 
                 </a>
-                
+                <br>
                 ";
             }
         }
