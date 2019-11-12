@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
                             move_uploaded_file($fileTmpName, $fileDestination);
                             echo " file succes";
 
-                            $imageDestination = '../images/'.$imageNameNew;
+                            $imageDestination = '../images/buildings/'.$imageNameNew;
                             move_uploaded_file($imageTmpName, $imageDestination);
                             echo " image succes".$buildingname .$architect .$fileNameNew .$imageNameNew .$description .$buildinglocation;
 

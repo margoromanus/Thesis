@@ -10,6 +10,10 @@
         <form action="includes/uploadBuilding.php" class="main-form" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
+                <h2>Submit building</h2>
+            </div>
+            
+            <div class="form-group">
                 <label for="buildingname">Name of the building:</label>
                 <input type="text" name="buildingname" id="buildingname" class="form-control">
             </div>
@@ -62,6 +66,10 @@
     <div class="col form-group">
         <form action="includes/uploadArchitect.php" class="main-form" method="POST" enctype="multipart/form-data">
             
+            <div class="form-group">
+                <h2>Submit architect</h2>
+            </div>
+
             <div class="form-group">
                 <label for="architectname">Name of the architect:</label>
                 <input type="text" name="architectname" id="architectname" class="form-control">

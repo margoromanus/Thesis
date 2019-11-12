@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
             if($imageSize < 50000000){
                 $imageNameNew = "arch_".$architectname.".".$imageActualExt;
 
-                $imageDestination = '../archimages/'.$imageNameNew;
+                $imageDestination = '../images/architects/'.$imageNameNew;
                 move_uploaded_file($imageTmpName, $imageDestination);
                 echo "succes" .$architectname .$nationality .$birthdate .$description .$imageNameNew;
                 $sql = "INSERT INTO architects (architectname, nationality, birthdate, deathdate, description, imagename) VALUES ('$architectname', '$nationality', '$birthdate', '$deathdate',  '$description', '$imageNameNew');";
