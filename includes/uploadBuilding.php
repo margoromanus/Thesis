@@ -50,11 +50,11 @@ if (isset($_POST['submit'])) {
 
                             $imageDestination = '../images/'.$imageNameNew;
                             move_uploaded_file($imageTmpName, $imageDestination);
-                            echo " image succes";
+                            echo " image succes".$buildingname .$architect .$fileNameNew .$imageNameNew .$description .$buildinglocation;
 
-                            $sql = "INSERT INTO buildings (buildingname, architect, modelname, imagename, description, buildinglocation) VALUES ('$buildingname', '$architect', '$fileNameNew', '$imageNameNew', '$description', $buildinglocation);";
+                            $sql = "INSERT INTO buildings (buildingname, architect, modelname, imagename, description, buildinglocation) VALUES ('$buildingname', '$architect', '$fileNameNew', '$imageNameNew', '$description', '$buildinglocation');";
                             mysqli_query($conn, $sql);
-                            header("Location: ../index.php?uploadsuccess");
+                            //header("Location: ../index.php?uploadsuccess");
                         }
                         else{
                             echo "image must be below 50 Mb";

@@ -24,14 +24,14 @@ if (isset($_POST['submit'])) {
     if (in_array($imageActualExt, $allowed)){
         if($imageError === 0){
             if($imageSize < 50000000){
-                $imageNameNew = "arch ".$architectname.".".$imageActualExt;
+                $imageNameNew = "arch_".$architectname.".".$imageActualExt;
 
                 $imageDestination = '../archimages/'.$imageNameNew;
                 move_uploaded_file($imageTmpName, $imageDestination);
-                echo "succes";
-                $sql = "INSERT INTO architects (architectname, nationality, birthdate, deathdate, description, imagename) VALUES ('$architectname', '$nationality', '$birthdate', '$description', '$imageNameNew');";
+                echo "succes" .$architectname .$nationality .$birthdate .$description .$imageNameNew;
+                $sql = "INSERT INTO architects (architectname, nationality, birthdate, deathdate, description, imagename) VALUES ('$architectname', '$nationality', '$birthdate', '$deathdate',  '$description', '$imageNameNew');";
                 mysqli_query($conn, $sql);
-                header("Location: ../index.php?uploadsuccess");
+                //header("Location: ../index.php?uploadsuccess");
             }
             else{
                 echo "file must be below 50 Mb";

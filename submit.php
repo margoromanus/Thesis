@@ -17,7 +17,7 @@
 
             if($resultCheck > 0) {
                 while ($row = mysqli_fetch_assoc($result)){
-                    echo "<option value=".$row['architectname']."> ".$row['architectname']." </option>"
+                    echo '<option value="'.$row['architectname'].'">'.$row['architectname'].'</option>'
                     ;
                 }
             }
