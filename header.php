@@ -13,6 +13,7 @@
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/0400ecf683.js" crossorigin="anonymous"></script>
         <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
         <script src="includes/resize.js"></script>
@@ -41,6 +42,7 @@
                             <a href="ARcamera.html" class="nav-link">Camera</a>
                         </li>
                     </ul>
+
 
                     <form action="search.php" method="GET" class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">

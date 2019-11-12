@@ -1,11 +1,11 @@
 <?php
     include 'header.php';
 ?>
-<div class="row">
+<div class="row form-container">
 
     <!-- Building form -->
 
-    <div class="col form-group">
+    <div class="col-lg form-group">
 
         <form action="includes/uploadBuilding.php" class="main-form" method="POST" enctype="multipart/form-data">
             
@@ -63,7 +63,7 @@
 
     <!-- Architect form -->
 
-    <div class="col form-group">
+    <div class="col-lg form-group">
         <form action="includes/uploadArchitect.php" class="main-form" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">

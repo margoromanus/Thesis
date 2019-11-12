@@ -2,11 +2,10 @@
     include 'header.php';
 ?>
 
-<h1> Front page</h1>
+<div class="row">
 
+<div class= " col-md-7 building-container">
 <h2> All Buildings </h2>
-
-<div class= "building-container">
     <?php
         $sql = "SELECT * FROM buildings;";
         $result = mysqli_query($conn, $sql);
@@ -14,19 +13,33 @@
             
         if($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)){
-                echo "<a href='building.php?title=".$row['buildingname']."'> <div class = 'building-box'>
-                    <h3>".$row['buildingname']."</h3>
-                    <p>".$row['description']."</p>
-                    <p>".$row['architect']."</p>
-                </div> </a> <br>";
+                echo "
+                
+                <a href='building.php?title=".$row['buildingname']."'> 
+                    <div class = ' row rounded border building-box'>
+
+                        <div class='col-sm-5'>
+                            <img class='img-fluid rounded' src='images/buildings/".$row['imagename']."' alt='A photo of ".$row['buildingname']."' title='".$row['buildingname']."'/>
+                        </div>
+
+                        <div class='col-sm-7'>
+                            <h3>".$row['buildingname']."</h3>
+                            <p>".$row['architect']."</p>
+                        </div>
+                    </div> 
+                </a> 
+                <br>
+                
+                ";
             }
         }
     ?>
 </div>
 
-<h2> All Architects </h2>
 
-<div class= "architect-container">
+
+<div class= " col-md-4 ml-auto architect-container">
+<h2> All Architects </h2>
     <?php
         $sql = "SELECT * FROM architects;";
         $result = mysqli_query($conn, $sql);
@@ -34,16 +47,28 @@
             
         if($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)){
-                echo "<a href='architect.php?title=".$row['architectname']."'> <div class = 'architect-box'>
-                    <h3>".$row['architectname']."</h3>
-                    <p>".$row['nationality']."</p>
-                    <p>".$row['description']."</p>
-                </div> </a>";
+                echo "
+                
+                <a href='architect.php?title=".$row['architectname']."'> 
+                    <div class = ' row architect-box'>
+                        <div class='col-sm-5'>
+                            <img class='img-fluid rounded-circle' src='images/architects/".$row['imagename']."' alt='A photo of ".$row['architectname']."' title='".$row['architectname']."'/>
+                        </div>
+
+                        <div class='col-sm-5'>
+                            <h3>".$row['architectname']."</h3>
+                            <p>".$row['nationality']."</p>
+                        </div>
+                        
+                    </div> 
+                </a>
+                
+                ";
             }
         }
     ?>
 </div>
-
+    </div>
         
 <?php
     include 'footer.php';

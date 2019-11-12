@@ -29,6 +29,31 @@
        else{
            echo "No results";
        }
+
+       $search = mysqli_real_escape_string($conn, $_GET['search']);
+       $sql = "SELECT * FROM architects WHERE architectname LIKE '%$search%' 
+       OR nationality LIKE '%$search%' 
+       OR description LIKE '%$search%'
+       OR birthdate LIKE '%$search%'
+       OR deathdate LIKE '%$search%' ";
+       $result = mysqli_query($conn, $sql);
+       $queryResult = mysqli_num_rows($result);
+
+       echo $search. " gave " .$queryResult. " results";
+
+       if($queryResult > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<div class = 'architect-box'>
+                <h3>".$row['architectname']."</h3>
+                <p>".$row['nationality']."</p>
+                <p>".$row['description']."</p>
+                        
+            </div>";
+            }
+       }
+       else{
+           echo "No results";
+       }
     }
 ?>
 </div>
