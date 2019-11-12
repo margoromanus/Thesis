@@ -1,88 +1,104 @@
 <?php
     include 'header.php';
 ?>
+<div class="row">
 
-    <form action="includes/uploadBuilding.php" class="main-form" method="POST" enctype="multipart/form-data">
-        
-        <div class="form-group">
-            <label for="buildingname">Name of the building:</label>
-            <input type="text" name="buildingname" id="buildingname" class="form-control">
-        </div>
+    <!-- Building form -->
 
-        <div class="form-group">
-            <label for="architect">Name of the architect:</label>
-            <select name= "architect" id="architect" class="form-control">
-                <?php
-                    $sql = "SELECT * FROM architects;";
-                    $result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
+    <div class="col form-group">
 
-                    if($resultCheck > 0) {
-                        while ($row = mysqli_fetch_assoc($result)){
-                            echo '<option value="'.$row['architectname'].'">'.$row['architectname'].'</option>';
+        <form action="includes/uploadBuilding.php" class="main-form" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="buildingname">Name of the building:</label>
+                <input type="text" name="buildingname" id="buildingname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="architect">Choose architect:</label>
+                <select name= "architect" id="architect" class="form-control">
+                    <?php
+                        $sql = "SELECT * FROM architects;";
+                        $result = mysqli_query($conn, $sql);
+                        $resultCheck = mysqli_num_rows($result);
+
+                        if($resultCheck > 0) {
+                            while ($row = mysqli_fetch_assoc($result)){
+                                echo '<option value="'.$row['architectname'].'">'.$row['architectname'].'</option>';
+                            }
                         }
-                    }
-                ?>
-            </select>
-        </div> 
-        
-        <div class="form-group">
-            <label for="adress">Adress of the building:</label>
-            <textarea name="buildinglocation" id="adress" class="form-control">adress</textarea>
-        </div>
-        
-        <div class="form-group">
-            <label for="description">Short description:</label>
-            <textarea name="description" id="description" class="form-control">enter short description</textarea>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="file">GLTF file:</label>
-                <input type="file" name="file" id="file" class="form-control-file">
+                    ?>
+                </select>
+            </div> 
+            
+            <div class="form-group">
+                <label for="adress">Adress of the building:</label>
+                <textarea name="buildinglocation" id="adress" class="form-control">adress</textarea>
             </div>
             
-            <div class="col">
-                <label for="image">Image:</label>
+            <div class="form-group">
+                <label for="description">Short description:</label>
+                <textarea name="description" id="description" class="form-control">enter short description</textarea>
+            </div>
+
+            <div class="row form-group">
+                <div class="col">
+                    <label for="file">GLTF file:</label>
+                    <input type="file" name="file" id="file" class="form-control-file">
+                </div>
+                
+                <div class="col">
+                    <label for="image">Building image:</label>
+                    <input type="file" name="image" id="image" class="form-control-file">
+                </div>
+            </div>      
+            
+            <button type="submit" name="submit" class="btn btn-primary">UPLOAD BUILDING</button>
+        </form>
+    </div>
+
+    <!-- Architect form -->
+
+    <div class="col form-group">
+        <form action="includes/uploadArchitect.php" class="main-form" method="POST" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="architectname">Name of the architect:</label>
+                <input type="text" name="architectname" id="architectname" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" name="nationality" id="nationality" class="form-control">
+            </div>
+            
+            <div class="row form-group">
+                <div class="col">
+                    <label for="birthdate">Date of birth:</label>
+                    <input type="date" name="birthdate" id="birthdate" class="form-control">
+                </div>
+                
+                <div class="col">
+                    <label for="deathdate">Date of death:</label>
+                    <input type="date" name="deathdate" id="deathdate" class="form-control">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Short description:</label>
+                <textarea name="description" id="description" class="form-control">enter short description</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="image">Architect image:</label>
                 <input type="file" name="image" id="image" class="form-control-file">
             </div>
-        </div>
-        <br>
-        <div class="form-group">
-            <button type="submit" name="submit" id="submit" class="form-control">UPLOAD</button>
-        </div>
-        
+            
+            <button type="submit" name="submit" class="btn btn-primary">UPLOAD ARCHITECT</button>
+        </form>
+    </div>
 
-    </form>
-
-    <form action="includes/uploadArchitect.php" method="POST" enctype="multipart/form-data">
-        <p>Architect name: </p>
-        
-        <input type="text" name="architectname"  >
-        <br>
-        <p>Nationality </p>
-        
-        <input type="text" name="nationality" >
-        <br>
-
-        <p>Birthdate: </p>
-        <input type="date" name="birthdate" >
-        <br>
-        <p>Deathdate: </p>
-        <input type="date" name="deathdate" >
-        <br>
-
-        <p>Short description: </p>
-        
-        <textarea name="description">enter short description</textarea>
-        <br>
-        <p>profile image: </p>
-        
-        <input type="file" name="image">
-        <br>
-        <button type="submit" name="submit">UPLOAD</button>
-    </form>
-
+</div>
 
 <?php
     include 'footer.php';
