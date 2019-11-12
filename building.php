@@ -16,7 +16,7 @@
                 echo "
                     
                     <div class= ' row building-container'>
-                        <a-scene class = ' col-7 viewer3d border rounded' embedded>
+                        <a-scene class = ' col-sm-7 viewer3d border rounded' embedded>
                             <a-assets>
                                 <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                             </a-assets>
@@ -37,7 +37,7 @@
                             <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='#model' shadow></a-gltf-model>   
                         </a-scene>
 
-                        <div class = ' col-4 '>
+                        <div class = ' col-sm-4 '>
                             <h3>".$row['buildingname']."</h3>
                             <p>".$row['description']."</p>
                             <h4>Architect:</h4>
