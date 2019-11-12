@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
                 echo "succes" .$architectname .$nationality .$birthdate .$description .$imageNameNew;
                 $sql = "INSERT INTO architects (architectname, nationality, birthdate, deathdate, description, imagename) VALUES ('$architectname', '$nationality', '$birthdate', '$deathdate',  '$description', '$imageNameNew');";
                 mysqli_query($conn, $sql);
-                //header("Location: ../index.php?uploadsuccess");
+                header("Location: ../index.php?uploadsuccess");
             }
             else{
                 echo "file must be below 50 Mb";

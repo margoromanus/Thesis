@@ -2,11 +2,6 @@
     include 'header.php';
 ?>
 
-<form action="search.php" method="GET">
-    <input type="text" name="search" placeholder= "Search">
-    <button type="submit" name="submit-search"> Search </button>
-</form>
-
 <h1> Front page</h1>
 
 <h2> All Buildings </h2>

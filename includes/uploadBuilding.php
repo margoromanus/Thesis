@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
 
                             $sql = "INSERT INTO buildings (buildingname, architect, modelname, imagename, description, buildinglocation) VALUES ('$buildingname', '$architect', '$fileNameNew', '$imageNameNew', '$description', '$buildinglocation');";
                             mysqli_query($conn, $sql);
-                            //header("Location: ../index.php?uploadsuccess");
+                            header("Location: ../index.php?uploadsuccess");
                         }
                         else{
                             echo "image must be below 50 Mb";
