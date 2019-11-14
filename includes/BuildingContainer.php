@@ -1,16 +1,25 @@
 <?php
-    $sql = "SELECT * FROM buildings;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-        
-    if($resultCheck > 0) {
-        while ($row = mysqli_fetch_assoc($result)){
-            echo "<a href='building.php?title=".$row['buildingname']."'> <div class = 'building-box'>
-            <h3>".$row['buildingname']."</h3>
-            <p>".$row['description']."</p>
-            <p>".$row['architect']."</p>
-            </div> </a> <br>"
-            ;
+
+    if($resultCheck_b > 0) {
+        while ($row_b = mysqli_fetch_assoc($result_b)){
+            echo "
+            
+            <a href='building.php?title=".$row_b['buildingname']."'> 
+                <div class = ' row rounded border building-box'>
+
+                    <div class='col-sm-5'>
+                        <img class='img-fluid rounded' src='images/buildings/".$row_b['imagename']."' alt='A photo of ".$row_b['buildingname']."' title='".$row_b['buildingname']."'/>
+                    </div>
+
+                    <div class='col-sm-7'>
+                        <h3>".$row_b['buildingname']."</h3>
+                        <p>".$row_b['architect']."</p>
+                    </div>
+                </div> 
+            </a> 
+            <br>
+            
+            ";
         }
     }
 ?>

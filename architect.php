@@ -21,9 +21,11 @@
                     </div>
 
                     <div class='col-md-9'>
+
                         <h3>".$row['architectname']."</h3>
                         <p>".$row['nationality']."</p>
-                        <p>".$row['description']."</p>
+                        <p>°".$row['birthdate']." / †".$row['deathdate']."</p>
+                        <p>".$row['description']."</p
                     </div>
                     
                 </div> 
@@ -37,28 +39,11 @@
 <div class= "building-container">
     <h2>Works:</h2>
     <?php
-        $sql = "SELECT * FROM buildings WHERE architect ='$title'";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
+        $sql_b = "SELECT * FROM buildings WHERE architect ='$title'";
+        $result_b = mysqli_query($conn, $sql_b);
+        $resultCheck_b = mysqli_num_rows($result_b);
             
-        if($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)){
-                echo "  <a href='building.php?title=".$row['buildingname']."'> 
-                <div class = ' row rounded border building-box'>
-
-                    <div class='col-sm-5'>
-                        <img class='img-fluid rounded' src='images/buildings/".$row['imagename']."' alt='A photo of ".$row['buildingname']."' title='".$row['buildingname']."'/>
-                    </div>
-
-                    <div class='col-sm-7'>
-                        <h3>".$row['buildingname']."</h3>
-                        <p>".$row['architect']."</p>
-                    </div>
-                </div> 
-            </a> 
-            <br>";
-            }
-        }
+        include 'includes/BuildingContainer.php';
     ?>
 </div>
 

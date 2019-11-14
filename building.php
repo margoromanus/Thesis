@@ -7,16 +7,16 @@
 
         $title = mysqli_real_escape_string($conn, $_GET['title']);
 
-        $sql = "SELECT * FROM buildings WHERE buildingname ='$title'";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
+        $sql_b = "SELECT * FROM buildings WHERE buildingname ='$title'";
+        $result_b = mysqli_query($conn, $sql_b);
+        $resultCheck_b = mysqli_num_rows($result_b);
             
-        if($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)){
+        if($resultCheck_b > 0) {
+            while ($row = mysqli_fetch_assoc($result_b)){
                 echo "
                     
                     <div class= ' row building-container'>
-                        <a-scene class = ' col-sm-7 viewer3d border rounded' embedded>
+                        <a-scene class = ' col-md-7 col viewer3d border rounded' embedded>
                             <a-assets>
                                 <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                             </a-assets>
@@ -29,15 +29,23 @@
                             <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='#model'></a-gltf-model>   
                         </a-scene>
 
-                        <div class = ' col-sm-4 '>
+                        <div class = ' col-md-4 '>
                             <h3>".$row['buildingname']."</h3>
                             <p>".$row['description']."</p>
                             <h4>Architect:</h4>
-                            <a href='architect.php?title=".$row['architect']."'>
-                                <p>".$row['architect']."</p>
-                            </a>
+                            "; 
+                              
+                            
+                            $sql_a = "SELECT * FROM architects WHERE architectname = '$row[architect]'";
+                            $result_a = mysqli_query($conn, $sql_a);
+                            $resultCheck_a = mysqli_num_rows($result_a);
+                                include 'includes/ArchitectContainer.php'; 
 
-                            <iframe
+                               
+
+                            echo "
+                            
+                            <iframe 
                                 width='100%'
                                 height='300'
                                 frameborder='0' style='border:0'

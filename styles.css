@@ -41,6 +41,7 @@ body{
 .architect-box {
     padding-top: 15px;
     padding-bottom: 15px;
+    
     background-color: #dddddd;
     width: 100%;
     
@@ -49,6 +50,6 @@ body{
 
 
 .viewer3d {
-    width: 500px;
+    width: 1000px;
     height: 500px;
 }
