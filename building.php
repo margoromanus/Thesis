@@ -36,6 +36,14 @@
                             <a href='architect.php?title=".$row['architect']."'>
                                 <p>".$row['architect']."</p>
                             </a>
+
+                            <iframe
+                                width='100%'
+                                height='300'
+                                frameborder='0' style='border:0'
+                                src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDOYAyjb8h8gw-6ukhykDcgmKQVgOZ84Kw
+                                    &q=".$row['buildinglocation']."' allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 ";
