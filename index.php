@@ -1,5 +1,5 @@
 ﻿<?php
-    include 'header.php';
+    include 'includes/header.php';
 ?>
 
 <div class="row main-row">
@@ -30,7 +30,7 @@
 </div>
         
 <?php
-    include 'footer.php';
+    include 'includes/footer.php';
 ?>
 
 

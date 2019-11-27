@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+    include 'includes/header.php';
 ?>
 
 <h1> AR</h1>
@@ -27,7 +27,7 @@
 </div>
 
 <?php
-    include 'footer.php';
+    include 'includes/footer.php';
 ?>
 
 

@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+    include 'includes/header.php';
 ?>
         
 <div class= "architect-container">
@@ -48,7 +48,7 @@
 </div>
 
 <?php
-    include 'footer.php';
+    include 'includes/footer.php';
 ?>
 
 

@@ -1,21 +1,20 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>jsQR Demo</title>
-  <script src="includes/jsQR.js"></script>
-  
-  
-</head>
-<body>
+<a-scene embedded arjs  id ="scene">
+    
+    <!-- create your content here. just a box for now -->
+    <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
 
-  <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+<div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
   <canvas id="canvas" hidden></canvas>
   <div id="output" hidden>
     <div id="outputMessage">No QR code detected.</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
+
   <script>
-    var video = document.createElement("video");
+     var video = document.createElement("video");
     var canvasElement = document.getElementById("canvas");
     var canvas = canvasElement.getContext("2d");
     var loadingMessage = document.getElementById("loadingMessage");
@@ -44,7 +43,7 @@
       loadingMessage.innerText = "⌛ Loading video..."
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         loadingMessage.hidden = true;
-        canvasElement.hidden = false;
+        canvasElement.hidden = true;
         outputContainer.hidden = false;
 
         canvasElement.height = video.videoHeight;
@@ -69,6 +68,5 @@
       }
       requestAnimationFrame(tick);
     }
+    window.location.href = outputMessage;
   </script>
-</body>
-</html>

@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+    include 'includes/header.php';
 ?>
 
 <h1> Search page</h1>
@@ -37,5 +37,5 @@
 </div>
 
 <?php
-    include 'footer.php';
+    include 'includes/footer.php';
 ?>
