@@ -1,4 +1,4 @@
-<script src="includes/jsQR.js"></script>
+<script src="jsQR.js"></script>
 
 <?php  
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
