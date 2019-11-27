@@ -39,7 +39,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a href="ARcamera.html" class="nav-link">Camera</a>
+                            <a href="AR.php" class="nav-link">Camera</a>
                         </li>
                     </ul>
 
