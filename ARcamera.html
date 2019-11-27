@@ -1,31 +1,25 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
-<script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.1/aframe/build/aframe-ar.js"></script>
-<script type="text/javascript" src="includes/instascan.min.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-
-
-    <a-scene embedded arjs id="arvideo">
-        <a-marker preset="hiro">
-            <a-box position='0 0.5 0' material='color: yellow;'></a-box>
-        </a-marker>
-        <a-entity camera></a-entity>
-    </a-scene>
+  <head>
+    <title>Instascan</title>
+    <script type="text/javascript" src="includes/instascan.min.js"></script>
+  </head>
+  <body>
+    <video id="preview"></video>
     <script type="text/javascript">
-        let scanner = new Instascan.Scanner({ video: document.getElementById('arvideo') });
-        scanner.addListener('scan', function (content) {
-          console.log(content);
-        });
-        Instascan.Camera.getCameras().then(function (cameras) {
-          if (cameras.length > 0) {
-            scanner.start(cameras[0]);
-          } else {
-            console.error('No cameras found.');
-          }
-        }).catch(function (e) {
-          console.error(e);
-        });
-      </script>
-</body>
+      let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+    </script>
+  </body>
 </html>
