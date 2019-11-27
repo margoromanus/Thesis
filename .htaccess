@@ -4,14 +4,4 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 
 RewriteRule ^([0-9a-zA-Z_-%]+)$ $1.php [NC,L]
 
-RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteCond %{REQUEST_FILENAME}\.php -f
-
-RewriteRule ^building/([0-9a-zA-Z_-%]+) building.php?title=$1 [NC,L]
-
-RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_FILENAME}\.php -f
-
-RewriteRule ^architect/([0-9a-zA-Z_-%]+) architect.php?title=$1 [NC,L]
