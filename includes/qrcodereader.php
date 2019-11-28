@@ -1,23 +1,19 @@
 
 
 <?php  
-    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
-         $url = "https://";   
-    else  
-         $url = "http://";   
-    // Append the host(domain name, ip) to the URL.   
+    $url = "http://";   
+    $urls = "https://";    
+        // Append the host(domain name, ip) to the URL.   
     $url.= $_SERVER['HTTP_HOST'];   
-    
-    // Append the requested resource location to the URL   
-    $url.= $_SERVER['REQUEST_URI'];    
-      
-    echo $url;  
+    $urls.= $_SERVER['HTTP_HOST']; 
+        // Append the requested resource location to the URL   
+    $url.= $_SERVER['REQUEST_URI'];
+    $urls.= $_SERVER['REQUEST_URI'];
   ?> 
 
 <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
   <canvas id="canvas" hidden></canvas>
   <div id="output" hidden>
-  <?php echo $url?>
     <div id="outputMessage">No QR code detected.</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
@@ -31,6 +27,7 @@
     var outputMessage = document.getElementById("outputMessage");
     var outputData = document.getElementById("outputData");
     var url = "<?php echo $url?>";
+    var urls = "<?php echo $urls?>";
 
     function drawLine(begin, end, color) {
       canvas.beginPath();
@@ -73,7 +70,7 @@
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data;
-          if(code.data != url){
+          if(!(code.data == url || code.data == urls)){
             window.location.href = code.data;
           }
           
