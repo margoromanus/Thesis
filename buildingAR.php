@@ -32,13 +32,11 @@
             while ($row = mysqli_fetch_assoc($result)){
                 echo "
                 <a-scene embedded arjs>
-                    <a-assets>
-                        <a-asset-item id='model' src='gltf/".$row['modelname']."'>
-                    </a-assets>
-                    <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='#model'></a-gltf-model>
-                    
-                    <!-- define a camera which will move according to the marker position -->
-                    <a-marker-camera preset='hiro'></a-marker-camera>
+                    <a-marker preset='hiro'>
+                        <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='gltf/".$row['modelname']."'></a-gltf-model>
+                    </a-marker>
+
+                    <a-entity camera> </a-entity>
                 </a-scene>
                 ";
             }

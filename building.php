@@ -32,6 +32,8 @@
                         <div class = ' col-md-4 '>
                             <h3>".$row['buildingname']."</h3>
                             <p>".$row['description']."</p>
+                            <a href='buildingAR.php?title=".$row['buildingname']."'>View in AR</a>
+                            
                             <h4>Architect:</h4>
                             "; 
                               
