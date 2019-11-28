@@ -24,12 +24,12 @@
 
         $title = mysqli_real_escape_string($conn, $_GET['title']);
 
-        $sql = "SELECT * FROM buildings WHERE buildingname ='$title'";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
+        $sql_b = "SELECT * FROM buildings WHERE buildingname ='$title'";
+        $result_b = mysqli_query($conn, $sql_b);
+        $resultCheck_b = mysqli_num_rows($result_b);
             
-        if($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)){
+        if($resultCheck_b > 0) {
+            while ($row = mysqli_fetch_assoc($result_b)){
                 echo "
                 <a-scene embedded arjs>
                     <a-marker preset='hiro'>
@@ -41,8 +41,9 @@
                 ";
             }
         }
-
+        
         include 'includes/qrcodereader.php';
+        include 'includes/BuildingContainer.php';
     ?>
     
 
