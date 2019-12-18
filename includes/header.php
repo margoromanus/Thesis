@@ -13,6 +13,7 @@
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/0400ecf683.js" crossorigin="anonymous"></script>
         <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
@@ -21,6 +22,7 @@
     </head>
 
         <body>
+           
 
              <nav class="navbar navbar-expand-sm navbar-light bg-light"> 
                 <a href="index.php" class="navbar-brand">Home</a>
@@ -31,11 +33,15 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Buildings</a>
+                            <a href="about.php" class="nav-link">About</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Architects</a>
+                            <a href="buildings.php" class="nav-link">Buildings</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="architects.php" class="nav-link">Architects</a>
                         </li>
                         
                         <li class="nav-item">

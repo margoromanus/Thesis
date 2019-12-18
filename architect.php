@@ -36,15 +36,22 @@
     ?>
 </div>
 
-<div class= "building-container">
-    <h2>Works:</h2>
-    <?php
-        $sql_b = "SELECT * FROM buildings WHERE architect ='$title'";
-        $result_b = mysqli_query($conn, $sql_b);
-        $resultCheck_b = mysqli_num_rows($result_b);
-            
-        include 'includes/BuildingContainer.php';
-    ?>
+<div class ="main-row subtitle">
+    <h2>Works</h2>
+    <h3> v </h3>
+</div>
+
+
+<div class="row main-row building-container">
+    
+        <?php
+            $sql_b = "SELECT * FROM buildings WHERE architect ='$title'";
+            $result_b = mysqli_query($conn, $sql_b);
+            $resultCheck_b = mysqli_num_rows($result_b);
+
+            include 'includes/BuildingContainer.php';
+        ?>
+    
 </div>
 
 <?php

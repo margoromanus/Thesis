@@ -1,12 +1,24 @@
 ﻿<?php
     include 'includes/header.php';
 ?>
+<div class= "row main-row">
+    <div class="col welcome">
+        <h1> Welcome </h1>
+        <p> What are you looking for? <p>
+        <div class= "form-group  zoekbar align-self-center">
+            <form action="search.php" method="GET" class=" form-group ">
+                <input class="form-control " type="search" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-zoek btn-primary" type="submit" name="submit-search">Search</button>
+            </form>     
+        </div>
+    </div>
+</div>
 
 <div class="row main-row">
 
-    <div class= " col-md-7 building-container">
+    <div class= " col building-container">
         <h2> All Buildings </h2>
-
+<div class=" row">
         <?php
             $sql_b = "SELECT * FROM buildings;";
             $result_b = mysqli_query($conn, $sql_b);
@@ -14,6 +26,7 @@
 
             include 'includes/BuildingContainer.php';
         ?>
+        </div>
     </div>
 
     <div class= " col-md-4 ml-auto architect-container">

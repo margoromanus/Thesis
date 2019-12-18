@@ -2,9 +2,19 @@
     include 'includes/header.php';
 ?>
 
-<h1> Search page</h1>
+<div class= "row main-row">
+    <div class="col welcome">
+        <h1> Search results: </h1>
+        <div class= "form-group  zoekbar align-self-center">
+            <form action="search.php" method="GET" class=" form-group ">
+                <input class="form-control " type="search" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-zoek btn-primary" type="submit" name="submit-search">Search</button>
+            </form>     
+        </div>
+    </div>
+</div>
 
-<div class= "building-container">
+<div class= " building-container">
 <?php
     if(isset($_GET['submit-search'])) {
        $search = mysqli_real_escape_string($conn, $_GET['search']);
@@ -15,7 +25,7 @@
        $result_b = mysqli_query($conn, $sql_b);
        $resultCheck_b = mysqli_num_rows($result_b);
 
-       echo " The term: ".$search. " gave " .$resultCheck_b. " building(s)";
+       echo "<h2> The term: ".$search. " gave " .$resultCheck_b. " building(s) </h2>";
 
        include 'includes/BuildingContainer.php';
 
@@ -29,7 +39,7 @@
        $result_a = mysqli_query($conn, $sql_a);
        $resultCheck_a = mysqli_num_rows($result_a);
 
-       echo " The term: ".$search. " gave " .$resultCheck_a. " architect(s)";
+       echo "<h2> The term: ".$search. " gave " .$resultCheck_a. " architect(s) </h2>";
 
        include 'includes/ArchitectContainer.php';
     }

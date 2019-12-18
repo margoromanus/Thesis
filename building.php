@@ -15,7 +15,7 @@
             while ($row = mysqli_fetch_assoc($result_b)){
                 echo "
                     
-                    <div class= ' row building-container'>
+                    <div class= ' row building-container justify-content-between'>
                         <a-scene class = ' col-md-7 col viewer3d border rounded' embedded>
                             <a-assets>
                                 <a-asset-item id='model' src='gltf/".$row['modelname']."'>
@@ -29,10 +29,11 @@
                             <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='#model'></a-gltf-model>   
                         </a-scene>
 
-                        <div class = ' col-md-4 '>
+                        <div class = ' col-md-4  '>
                             <h3>".$row['buildingname']."</h3>
                             <p>".$row['description']."</p>
                             <a href='buildingAR.php?title=".$row['buildingname']."'>View in AR</a>
+                            
                             
                             <h4>Architect:</h4>
                             "; 
