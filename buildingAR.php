@@ -58,10 +58,12 @@
                     </a> 
                 </div>
             
-                ";    
+                ";  
+                include 'includes/qrcodereader.php';  
             }
         }
-        include 'includes/qrcodereader.php';
+
+       
         
     ?>
 
