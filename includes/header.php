@@ -19,6 +19,7 @@
         <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
         <script src="includes/resize.js"></script>
+        <script src="includes/clippingcontrol.js"></script>
        
     </head>
 

@@ -16,26 +16,34 @@
                 echo "
                     
                     <div class= ' row building-container justify-content-between '>
-                        <a-scene class = ' col-md-7  col viewer3d border rounded ' embedded>
-                            <a-assets>
-                                <a-asset-item id='model' src='gltf/".$row['modelname']."'>
-                            </a-assets>
-                            <a-entity camera look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.1; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 1.5'>
-                            </a-entity>
+                        <div class = ' col-md-7 viewer3d '>
+                            <div class='  slide-container'>
+                                <h4> Section plane position: <h4>
+                                <input type='range' min='-150' max='150' value='150' class='slider' id='myRange'>    
+                            </div>
                             
-                            <a-sky color='#eeeeee'></a-sky>
-                            <a-light type='ambient' intensity='0.7'></a-light>
-                            <a-entity light='type: directional; castShadow:false; color: #fff; intensity: 0.5' position='1 1 1' ></a-entity>
-                            <a-gltf-model id='target' resize='axis:x; value:1.6' position='0 0 0' src='#model'></a-gltf-model>   
-                        </a-scene>
+                                <a-scene renderer='physicallyCorrectLights: true' class = ' border rounded ' embedded>
+                                    <a-assets>
+                                        <a-asset-item id='model' src='gltf/".$row['modelname']."'>
+                                    </a-assets>
+                                    <a-entity camera look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.01; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 -1.5'>
+                                    </a-entity>
+                                    
+                                    <a-entity id='clippingplane' clippingcontrol='normal:  1 0 0; constant: 2'></a-entity>
+                                    <a-light type='ambient' intensity='2'></a-light>
+                                    <a-entity light='type: directional; castShadow:true; color: #fff; intensity: 2' position='1 1 1' ></a-entity>
+                                    <a-gltf-model id='target' shadow='receive: false' resize='axis:x; value:1.6' position='0 0 0' src='#model'></a-gltf-model>   
+                                </a-scene>
+                            
+                        </div>
 
-                        <div class = ' col-md-4  '>
-                            <h3>".$row['buildingname']."</h3>
+                        <div class = ' col-md-4 '>
+                            <h2>".$row['buildingname']."</h2>
                             <p>".$row['description']."</p>
                             <a href='buildingAR.php?title=".$row['buildingname']."'>View in AR</a>
                             
                             
-                            <h4>Architect:</h4>
+                            <h3>Architect:</h3>
                             "; 
                               
                             
