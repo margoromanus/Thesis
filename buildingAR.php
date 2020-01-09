@@ -38,20 +38,20 @@
                 echo "
                 <a-scene embedded arjs class ='row main-row'>
                     <a-marker preset='hiro'>
-                        <a-gltf-model id='target' resize='axis:x; value:1.5' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
+                        <a-gltf-model id='target' resize='axis:x; value:1.41' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
                     </a-marker>
                     <a-entity camera> </a-entity>
                 </a-scene>
 
-                <div class='col overlay'>
+                <div class='col overlay fixed-bottom'>
                     <a href='building.php?title=".$row_b['buildingname']."'> 
                         <div class = ' row rounded border building-box'>
-                            <div class='col-sm-5'>
+                            <div class='col-4'>
                                 <img class='img-fluid rounded' src='images/buildings/".$row_b['imagename']."' alt='A photo of ".$row_b['buildingname']."' title='".$row_b['buildingname']."'/>
                             </div>
 
-                            <div class='col-sm-7'>
-                                <h3>".$row_b['buildingname']."</h3>
+                            <div class='col-8'>
+                                <h2>".$row_b['buildingname']."</h2>
                                 <p>".$row_b['architect']."</p>
                             </div>
                         </div> 
