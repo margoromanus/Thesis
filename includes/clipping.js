@@ -1,14 +1,5 @@
 AFRAME.registerComponent('clipping', {
-    schema: {
-      axis: {
-        type: 'height',
-        default: 'height'
-      },
-      value: {
-        type: 'number',
-        default: 1
-      }
-    },
+    
     init: function() {
       var el = this.el;
       var data = this.data;
