@@ -5,9 +5,9 @@
   <title>AR</title>
   <script src="includes/jsQR.js"></script>
   <!-- include A-Frame obviously -->
-  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
   <!-- include ar.js for A-Frame -->
-  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
   
   
 </head>
