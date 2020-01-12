@@ -5,12 +5,14 @@ include_once 'dbh.inc.php';
 if (isset($_POST['submit'])) {
     $file = $_FILES['file'];
     $imagefile = $_FILES['image'];
+    
 
     $buildingname = $_POST['buildingname'];
     $architect = $_POST['architect'];
     $description = $_POST['description'];
     $buildinglocation = $_POST['buildinglocation'];
 
+    
     $fileName = $file['name'];
     $fileTmpName = $file['tmp_name'];
     $fileSize = $file['size'];
@@ -40,10 +42,10 @@ if (isset($_POST['submit'])) {
                     if($imageError === 0){
                         if($imageSize < 50000000){
             
-                            
+                           
                             $fileNameNew = $buildingname.".".$fileActualExt;
                             $imageNameNew = $buildingname.".".$imageActualExt;
-            
+
                             $fileDestination = '../gltf/'.$fileNameNew;
                             move_uploaded_file($fileTmpName, $fileDestination);
                             echo " file succes";
@@ -54,7 +56,7 @@ if (isset($_POST['submit'])) {
 
                             $sql = "INSERT INTO buildings (buildingname, architect, modelname, imagename, description, buildinglocation) VALUES ('$buildingname', '$architect', '$fileNameNew', '$imageNameNew', '$description', '$buildinglocation');";
                             mysqli_query($conn, $sql);
-                            header("Location: ../index.php?uploadsuccess");
+                            //header("Location: ../index.php?uploadsuccess");
                         }
                         else{
                             echo "image must be below 50 Mb";

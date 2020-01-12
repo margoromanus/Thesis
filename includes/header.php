@@ -20,6 +20,13 @@
         <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
         <script src="includes/resize.js"></script>
         <script src="includes/clippingcontrol.js"></script>
+
+        <!-- https://davidshimjs.github.io/qrcodejs/ -->
+        <script src='https://raw.githack.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
+
+        <!-- Include pdfMake - http://pdfmake.org/ -->
+        <script src='includes/pdfmake.min.js'></script>
+        <script src='includes/vfs_fonts.js'></script>
        
     </head>
 
