@@ -37,7 +37,7 @@
             while ($row_b = mysqli_fetch_assoc($result_b)){
                 echo "
                 <a-scene embedded arjs class ='row main-row'>
-                    <a-marker preset='hiro'>
+                    <a-marker preset='custom' type='pattern' url='images/markers/MarkerBase.patt'>
                         <a-gltf-model id='target' resize='axis:x; value:1.41' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
                     </a-marker>
                     <a-entity camera> </a-entity>
