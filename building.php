@@ -41,7 +41,7 @@
                             <h2 id='buildingnameQR'>".$row['buildingname']."</h2>
                             <p>".$row['description']."</p>
                             
-                            <button type='button' class='btn btn-primary' href='buildingAR.php?title=".$row['buildingname']."'>View in AR</button>
+                            <button type='button' class='btn btn-primary' onclick=\"window.location.href = 'buildingAR.php?title=".$row['buildingname']."';\">View in AR</button>
                             
                             
                             <h3>Architect:</h3>
