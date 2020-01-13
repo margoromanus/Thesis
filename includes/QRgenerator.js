@@ -42,9 +42,9 @@ function generatePdf(){
 var canvas = document.createElement('canvas');
 document.querySelector('#arcode-container').appendChild(canvas)
 canvas.width  = 1024;
-canvas.height = 1024;
-canvas.style.width  = '512px';
-canvas.style.height = '512px';
+canvas.height = canvas.width;
+canvas.style.width  = '100%';
+canvas.style.height = canvas.style.width;
 
 var context = canvas.getContext('2d')
 
@@ -68,10 +68,7 @@ function updateARCode(){
         generateArCodeCanvas(canvas, urlQrCode, function onReady(){
                 console.log('ar-code generated for', urlQrCode)
         })
-
      
-        
-       
 }
 
 //////////////////////////////////////////////////////////////////////////////

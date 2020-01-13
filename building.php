@@ -55,7 +55,8 @@
                                
 
                             echo "
-                            
+                            <h3>Location:</h3>
+
                             <iframe 
                                 width='100%'
                                 height='300'
@@ -63,23 +64,15 @@
                                 src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDOYAyjb8h8gw-6ukhykDcgmKQVgOZ84Kw
                                     &q=".$row['buildinglocation']."' allowfullscreen>
                             </iframe>
+                            <h3>Marker:</h3>
 
-                            <div class='row' id='row-ui' >
-              
-                                
-
-                                <div class='input-field col s4 offset-s4'>
-                                    <a onclick='generatePdf()' class='waves-effect waves-light btn-large' title='Generate a PDF instruction page'>Pdf</a>
-                                </div>                
-
-                            </div>
-
-                            <!-- qr code display -->
-                            <div class='row'>
-                                <div class='valign center' style='width: 100%;' id='arcode-container' ></div>           
-                            </div>
-                                
-
+                            <div class='button'>
+                                <a onclick='generatePdf()' class='waves-effect waves-light btn-large' title='Generate a PDF instruction page'>Pdf</a>
+                            </div>                
+                            
+                            <div width='100%'
+                            height='300' id='arcode-container' ></div>           
+                            
                             <!--Import jQuery before materialize.js-->
                             <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
                             <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js'></script>
