@@ -15,7 +15,7 @@
             while ($row = mysqli_fetch_assoc($result_b)){
                 echo "
                     
-                    <div class= ' row building-container justify-content-between '>
+                    <div class= ' row main-row building-container justify-content-between '>
                         <div class = ' col-md-7 viewer3d '>
                             <div class='  slide-container'>
                                 <h4> Section plane position: <h4>
@@ -40,7 +40,8 @@
                         <div class = ' col-md-4 '>
                             <h2 id='buildingnameQR'>".$row['buildingname']."</h2>
                             <p>".$row['description']."</p>
-                            <a href='buildingAR.php?title=".$row['buildingname']."'>View in AR</a>
+                            
+                            <button type='button' class='btn btn-primary' href='buildingAR.php?title=".$row['buildingname']."'>View in AR</button>
                             
                             
                             <h3>Architect:</h3>
@@ -55,23 +56,26 @@
                                
 
                             echo "
+                            
                             <h3>Location:</h3>
 
                             <iframe 
+                                class='location border rounded'
                                 width='100%'
                                 height='300'
                                 frameborder='0' style='border:0'
                                 src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDOYAyjb8h8gw-6ukhykDcgmKQVgOZ84Kw
                                     &q=".$row['buildinglocation']."' allowfullscreen>
                             </iframe>
-                            <h3>Marker:</h3>
-
-                            <div class='button'>
-                                <a onclick='generatePdf()' class='waves-effect waves-light btn-large' title='Generate a PDF instruction page'>Pdf</a>
-                            </div>                
                             
+                            
+                            <h3>Marker:</h3>
+               
                             <div width='100%'
-                            height='300' id='arcode-container' ></div>           
+                            height='300' id='arcode-container' ></div> 
+                            
+                            <button type='button' onclick='generatePdf()' class='btn btn-primary' title='Generate a PDF instruction page'>Download Pdf</button>
+
                             
                             <!--Import jQuery before materialize.js-->
                             <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script>

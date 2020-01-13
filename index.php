@@ -4,7 +4,7 @@
 <div class= "row main-row">
     <div class="col welcome">
         <h1> Welcome </h1>
-        <p> What are you looking for? <p>
+        <h4> What are you looking for? <h4>
         <div class= "form-group  zoekbar align-self-center">
             <form action="search.php" method="GET" class=" form-group ">
                 <input class="form-control " type="search" name="search" placeholder="Search" aria-label="Search">
@@ -16,7 +16,7 @@
 
 <div class="row main-row">
 
-    <div class= " col building-container">
+    <div class= " col-md-8 building-container">
         <h2> All Buildings </h2>
         <div class=" row">
             <?php
@@ -31,7 +31,7 @@
 
     <div class= " col-md-4 ml-auto architect-container">
         <h2> All Architects </h2>
-
+        <div class=" row">
             <?php
                 $sql_a = "SELECT * FROM architects;";
                 $result_a = mysqli_query($conn, $sql_a);
@@ -39,6 +39,7 @@
 
                 include 'includes/ArchitectContainer.php';
             ?>
+        </div>
     </div>
 </div>
         

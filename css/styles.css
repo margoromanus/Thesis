@@ -10,6 +10,8 @@ h2{
 h3{
     font-family: 'Jost',Arial, sans-serif;
     font-size: 24px;
+    margin-top: 12px;
+
 }
 h4{
     font-family: 'Jost',Arial, sans-serif;
@@ -21,9 +23,18 @@ body{
     font-family: 'Roboto',Arial, Helvetica, sans-serif;
     font-size: 12px;
     
+    
+}
+p{
+    margin-left: 12px;
+    text-align: justify;
 }
 a{
     padding: 0px;
+    
+}
+button{
+    margin: 12px;
     
 }
 .welcome{
@@ -44,6 +55,7 @@ a{
 }
 .main-row{
     padding: 10px;
+    margin: 0px;
 }
 
 .form-container{
@@ -103,6 +115,8 @@ a{
     padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
     z-index: 1;
     background-color: #eee;
     width: 100%;
@@ -110,20 +124,23 @@ a{
 
 }
 .architect-box {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 0px;
+    
     margin-bottom: 15px;
+    z-index: 1;
     background-color: #eee;
     width: 100%;
     
 
 }
+
 .viewer3d {
     width: 1000px;
     height: 500px;
     margin-bottom: 70px;
     padding: 0px;
+}
+.location{
+    margin: 12px;
 }
 .overlay{
     width: 100%;
@@ -131,6 +148,7 @@ a{
     margin: auto;
     
 }
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 

@@ -15,12 +15,12 @@
             while ($row = mysqli_fetch_assoc($result)){
                 echo " 
                 
-                <div class = ' row architect-box border rounded'>
-                    <div class='col-md-3'>
+                <div class = 'row main-row rounded border architect-box'>
+                    <div class='col-md-4 col-lg-3'>
                         <img class='img-fluid rounded-circle' src='images/architects/".$row['imagename']."' alt='A photo of ".$row['architectname']."' title='".$row['architectname']."'/>
                     </div>
 
-                    <div class='col-md-9'>
+                    <div class='col-md-8 col-lg-9'>
 
                         <h3>".$row['architectname']."</h3>
                         <p>".$row['nationality']."</p>
