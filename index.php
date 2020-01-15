@@ -3,6 +3,8 @@
 ?>
 <div class= "row main-row">
     <div class="col welcome">
+        <img class="abstract-icon" src="images/Website/Home.png" alt="Home Icon" title="Home Icon">
+   
         <h1> Welcome </h1>
         <h4> What are you looking for? <h4>
         <div class= "form-group  zoekbar align-self-center">

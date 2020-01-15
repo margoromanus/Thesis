@@ -7,7 +7,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>jsQR Demo</title>
+  <title>ThesisJelle-AR</title>
   <script src="includes/jsQR.js"></script>
   <!-- include A-Frame obviously -->
   <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>

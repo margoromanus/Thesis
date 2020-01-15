@@ -17,6 +17,12 @@ h4{
     font-family: 'Jost',Arial, sans-serif;
     font-size: 18px;
 }
+h5{
+    font-family: 'Jost',Arial, sans-serif;
+    font-size: 24px;
+    margin-top: 12px;
+    text-align: center;
+}
 
 body{
     background-color: #fff;
@@ -148,7 +154,25 @@ button{
     margin: auto;
     
 }
-
+.abstract-img{
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom:12px;
+    padding-right: 12px;
+}
+.abstract-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    height: 70px;
+}
+.abstract-title-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
