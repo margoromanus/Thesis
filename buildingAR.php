@@ -24,7 +24,9 @@
 </head>
 
 <body>
-
+<div class='col overlay-top fixed-top'>
+                    <button type='button' class='btn btn-primary' onclick='window.location.href = "AR.php"'>Scan other QR code</button>
+                </div>
     <?php
 
         $title = mysqli_real_escape_string($conn, $_GET['title']);
@@ -36,13 +38,15 @@
         if($resultCheck_b > 0) {
             while ($row_b = mysqli_fetch_assoc($result_b)){
                 echo "
-                <a-scene embedded arjs class ='row main-row'>
+                <a-scene embedded vr-mode-ui='enabled: false' arjs='debugUIEnabled: false;' renderer= 'antialias: auto; colorManagement: true;' class ='row main-row'>
                     <a-marker preset='custom' type='pattern' url='images/markers/MarkerBase.patt'>
                         <a-gltf-model id='target' resize='axis:x; value:1.41' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
                     </a-marker>
                     <a-entity camera> </a-entity>
+                    <a-entity light='type: directional; color: #ccc; intensity: 1;' position='1 1 1' ></a-entity>
+                    <a-entity light=' type: ambient; color: #aaa'></a-entity>
                 </a-scene>
-
+                
                 <div class='col overlay fixed-bottom'>
                     <a href='building.php?title=".$row_b['buildingname']."'> 
                         <div class = ' row rounded border building-box'>
@@ -54,12 +58,13 @@
                                 <h2>".$row_b['buildingname']."</h2>
                                 <p>".$row_b['architect']."</p>
                             </div>
+                            
                         </div> 
                     </a> 
                 </div>
             
                 ";  
-                include 'includes/qrcodereader.php';  
+                //include 'includes/qrcodereader.php';  
             }
         }
 

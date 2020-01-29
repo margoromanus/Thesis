@@ -1,4 +1,44 @@
 
+ <style>
+  body {
+    font-family: 'Ropa Sans', sans-serif;
+    color: #333;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  #outputMessage {
+    text-align: center;
+    background-color: #eee;
+  }
+  #loadingMessage {
+    text-align: center;
+    padding: 40px;
+    background-color: #eee;
+  }
+
+  #canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  #output {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  #output div {
+    padding-bottom: 10px;
+    word-wrap: break-word;
+  }
+
+  #noQRFound {
+    text-align: center;
+  }
+</style>
+
 
 <?php  
     $url = "http://";   
@@ -11,12 +51,14 @@
     $urls.= $_SERVER['REQUEST_URI'];
   ?> 
 
-<div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
-  <canvas id="canvas" hidden></canvas>
+
+  <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
   <div id="output" hidden>
     <div id="outputMessage">No QR code detected.</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
+  <canvas id="canvas" hidden></canvas>
+  
 
   <script>
     var video = document.createElement("video");
@@ -38,6 +80,8 @@
       canvas.stroke();
     }
 
+    
+
     //Use facingMode: environment to attemt to get the front camera on phones
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
       video.srcObject = stream;
@@ -52,7 +96,7 @@
       if (video.readyState === video.HAVE_ENOUGH_DATA) {
         
         loadingMessage.hidden = true;
-        canvasElement.hidden = true;
+        canvasElement.hidden = false;
         outputContainer.hidden = false;
 
         canvasElement.height = video.videoHeight;
@@ -70,6 +114,7 @@
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data;
+
           if(!(code.data == url || code.data == urls)){
             window.location.href = code.data;
           }
@@ -81,6 +126,7 @@
         }
       }
       requestAnimationFrame(tick);
+      
     }
     
   </script>
