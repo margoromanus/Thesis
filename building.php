@@ -22,17 +22,19 @@
                                 <input type='range' min='-150' max='150' value='150' class='slider' id='myRange'>    
                             </div>
                             
-                                <a-scene   renderer= 'antialias: auto; colorManagement: true;' class = ' border rounded ' embedded>
+                                <a-scene renderer= 'antialias: auto; colorManagement: true;' class = ' border rounded ' embedded>
                                     <a-assets>
                                         <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                                     </a-assets>
-                                    <a-entity camera look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.1; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 -1.5; screenSpacePanning: true'>
+                                    <a-entity camera position='0 1 0.1' look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.1; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 -1.5; screenSpacePanning: true'>
                                     </a-entity>
                                     
                                     <a-entity id='clippingplane' clippingcontrol='normal:  1 0 0; constant: 2'></a-entity>
-                                    <a-entity light='type: directional; castShadow:true; color: #ccc; intensity: 1;' position='1 1 1' ></a-entity>
-                                    <a-entity light=' type: ambient; color: #aaa'></a-entity>
-                                    <a-gltf-model id='target'  shadow='receive: false' resize='axis:x; value:1.6' position='0 0 0' src='#model'></a-gltf-model>   
+                                    <a-entity light='type: directional; castShadow:true; color: #ccc; intensity: 1.2;' position='1 1 1' ></a-entity>
+                                    <a-entity light=' type: ambient; color: #999'></a-entity>
+                                    <a-gltf-model id='target'  shadow='receive: false' resize='axis:x; value:1.6' position='0 0 0' src='#model'>
+                                        <a-entity camera >
+                                    </a-gltf-model>   
                                 </a-scene>
                             
                         </div>
