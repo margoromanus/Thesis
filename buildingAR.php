@@ -14,6 +14,7 @@
   <!-- include ar.js for A-Frame -->
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
   <script src="includes/resize.js"></script>
+  <script src="includes/backfaceculling.js"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
@@ -40,7 +41,7 @@
                 echo "
                 <a-scene embedded vr-mode-ui='enabled: false' arjs='debugUIEnabled: false;' renderer= 'antialias: auto; colorManagement: true;' class ='row main-row'>
                     <a-marker preset='custom' type='pattern' url='images/markers/MarkerBase.patt'>
-                        <a-gltf-model id='target' resize='axis:x; value:1.41' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
+                        <a-gltf-model id='target' backfaceculling resize='axis:x; value:1.41' position='0 0 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
                     </a-marker>
                     <a-entity camera> </a-entity>
                     <a-entity light='type: directional; color: #ccc; intensity: 1;' position='1 1 1' ></a-entity>
