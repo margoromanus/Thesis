@@ -30,7 +30,7 @@
                                     </a-camera>
                                     
                                     <a-entity id='clippingplane' clippingcontrol='normal:  1 0 0; constant: 2'></a-entity>
-                                    <a-entity light='type: directional; castShadow:true; color: #ccc; intensity: 1.2;' position='1 1 1' ></a-entity>
+                                    <a-entity light='type: directional; castShadow:false; color: #ccc; intensity: 1.2;' position='1 1 1' ></a-entity>
                                     <a-entity light=' type: ambient; color: #999'></a-entity>
                                     <a-gltf-model id='target'  shadow='receive: false' resize='axis:x; value:1.6' position='0 0 0' src='#model'>
                                     </a-gltf-model>   

@@ -54,7 +54,7 @@
 
   <div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
   <div id="output" hidden>
-    <div id="outputMessage">No QR code detected.</div>
+    <div id="outputMessage">Please point your device at a QR code</div>
     <div hidden><b>Data:</b> <span id="outputData"></span></div>
   </div>
   <canvas id="canvas" hidden></canvas>
