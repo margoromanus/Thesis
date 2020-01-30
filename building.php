@@ -22,7 +22,7 @@
                                 <input type='range' min='-150' max='150' value='150' class='slider' id='myRange'>    
                             </div>
                             
-                                <a-scene renderer= 'antialias: auto; colorManagement: true;' class = ' border rounded ' embedded>
+                                <a-scene   renderer= 'antialias: auto; colorManagement: true;' class = ' border rounded ' embedded>
                                     <a-assets>
                                         <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                                     </a-assets>
