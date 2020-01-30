@@ -26,13 +26,13 @@
                                     <a-assets>
                                         <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                                     </a-assets>
-                                  
+                                    
                                     
                                     <a-entity id='clippingplane' clippingcontrol='normal:  1 0 0; constant: 2'></a-entity>
                                     <a-entity light='type: directional; castShadow:true; color: #ccc; intensity: 1.2;' position='1 1 1' ></a-entity>
                                     <a-entity light=' type: ambient; color: #999'></a-entity>
                                     <a-gltf-model id='target'  shadow='receive: false' resize='axis:x; value:1.6' position='0 0 0' src='#model'>
-                                        <a-entity camera position= '0 1.6 1'>
+                                        <a-entity camera position= '0 1.6 -30' rotation= '0 180 0'>
                                     </a-gltf-model>   
                                 </a-scene>
                             
