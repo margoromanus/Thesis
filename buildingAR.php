@@ -43,8 +43,8 @@
                         <a-gltf-model id='target'  resize='axis:x; value:1.41' position='0 0 0' rotation='0 180 0' src='gltf/".$row_b['modelname']."'></a-gltf-model>
                     </a-marker>
                     <a-entity camera> </a-entity>
-                    <a-entity light='type: directional; color: #ccc; intensity: 1;' position='1 1 1' ></a-entity>
-                    <a-entity light=' type: ambient; color: #aaa'></a-entity>
+                    <a-entity light='type: directional; color: #ddd; intensity: 1;' position='1 1 1' ></a-entity>
+                    <a-entity light=' type: ambient; color: #888'></a-entity>
                 </a-scene>
                 
                 <div class='col overlay fixed-bottom'>
