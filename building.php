@@ -26,7 +26,7 @@
                                     <a-assets>
                                         <a-asset-item id='model' src='gltf/".$row['modelname']."'>
                                     </a-assets>
-                                    <a-camera id='cam-desktop' look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.1; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 -1.5; screenSpacePanning: true'>
+                                    <a-camera id='cam-desktop' look-controls orbit-controls='target: 0 0 0; fov: 20; autoRotate: true; autoRotateSpeed: 0.01; minDistance: 0.5; maxDistance: 2; initialPosition: 0 0.5 -1.5; screenSpacePanning: true'>
                                     </a-camera>
                                     
                                     <a-entity id='clippingplane' clippingcontrol='normal:  1 0 0; constant: 2'></a-entity>
