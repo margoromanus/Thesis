@@ -29,6 +29,8 @@ AFRAME.registerComponent('resize', {
           var scale = data.value / z;
         }
         el.setAttribute('scale', scale + ' ' + scale + ' ' + scale);
+
+        
       });
     }
   });
